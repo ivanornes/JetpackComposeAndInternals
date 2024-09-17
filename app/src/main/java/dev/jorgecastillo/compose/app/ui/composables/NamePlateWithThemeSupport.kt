@@ -9,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import dev.jorgecastillo.compose.app.tools.DevicePreviews
 import dev.jorgecastillo.compose.app.ui.theme.ComposeAndInternalsTheme
 
 @Composable
@@ -25,6 +26,7 @@ fun NamePlateWithThemeSupport(name: String) {
 
 @Composable
 @Preview
+@DevicePreviews
 fun NamePlateWithThemeSupportPreview() {
     ComposeAndInternalsTheme {
         NamePlateWithThemeSupport(name = "Test name")

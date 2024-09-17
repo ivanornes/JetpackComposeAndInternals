@@ -3,6 +3,7 @@ package dev.jorgecastillo.compose.app.ui.composables
 import android.util.Log
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Button
 import androidx.compose.material.Text
@@ -14,7 +15,21 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun SocialNetworkUser(name: String, location: String, onFollow: () -> Unit) {
-    
+    Row(modifier = Modifier.fillMaxWidth().padding(8.dp)) {
+        Column(
+            modifier = Modifier.padding(horizontal = 8.dp),
+        ) {
+            Text(name)
+            Text(location)
+        }
+        Button(
+            modifier = Modifier.padding(horizontal = 8.dp),
+            content = {
+            Text("Follow")
+        }, onClick = {
+            onFollow()
+        })
+    }
 }
 
 @Composable

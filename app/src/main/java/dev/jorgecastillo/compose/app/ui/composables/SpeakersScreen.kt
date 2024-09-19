@@ -55,7 +55,7 @@ Scaffold(
         }) {
             Icon(
                 Icons.Filled.Add,
-                contentDescription = "Add new speaker",
+                contentDescription = stringResource(R.string.content_desc_fab_add_speaker),
                 tint = Color.Black
             )
         }
@@ -84,7 +84,7 @@ fun SpeakerCard(speaker: Speaker, onClick: (Speaker) -> Unit = {}) {
             Row(modifier = Modifier.padding(dimensionResource(R.dimen.spacing_regular))) {
                 Image(
                     painter = painterResource(avatarResForId(speaker.id)),
-                    contentDescription = "Speaker image",
+                    contentDescription = stringResource(R.string.content_desc_speaker_avatar, speaker.name),
                     contentScale = ContentScale.Crop,
                     modifier = Modifier
                         .size(dimensionResource(id = R.dimen.avatar_size))

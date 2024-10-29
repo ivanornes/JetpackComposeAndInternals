@@ -5,6 +5,7 @@ package dev.jorgecastillo.compose.app.ui.composables
 import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -80,7 +81,8 @@ Scaffold(
 fun SpeakerCard(speaker: Speaker, onClick: (Speaker) -> Unit = {}) {
     Card(modifier = Modifier
         .fillMaxWidth()
-        .padding(dimensionResource(R.dimen.spacing_small))) {
+        .padding(dimensionResource(R.dimen.spacing_small))
+        .clickable { onClick(speaker) }) {
             Row(modifier = Modifier.padding(dimensionResource(R.dimen.spacing_regular))) {
                 Image(
                     painter = painterResource(avatarResForId(speaker.id)),
@@ -95,7 +97,8 @@ fun SpeakerCard(speaker: Speaker, onClick: (Speaker) -> Unit = {}) {
                     Text(speaker.company, style = MaterialTheme.typography.caption)
                 }
             }
-    }
+        }
+
 }
 
 @SuppressLint("DiscouragedApi")

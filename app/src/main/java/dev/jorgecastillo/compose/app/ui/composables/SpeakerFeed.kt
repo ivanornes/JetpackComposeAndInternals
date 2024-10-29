@@ -21,7 +21,9 @@ fun SpeakerFeed(
 
     LazyColumn(modifier.testTag("SpeakersList")) {
         items(speakers) { speaker ->
-            SpeakerCard(speaker) { onSpeakerClick(speaker) }
+            SpeakerCard(speaker) {
+                onSpeakerClick(speaker)
+            }
         }
     }
 }
